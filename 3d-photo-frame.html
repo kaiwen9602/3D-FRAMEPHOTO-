@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            min-width: 400px;
+            min-height: 400px;
+            width: 100vw;
+            height: 100vh;
+            background: url("p3.jpg") no-repeat center/cover;
+            overflow: hidden;
+        }
+
+        .photo-room {
+            position:absolute;
+            top:100px;
+            left:0;
+            right:0;
+            margin:auto;
+            width: 200px;
+            height: 200px;
+            box-shadow: 0px 0px 10px 0px inset white;
+            /* perspective: 1000px; */
+            transform-style: preserve-3d ;
+            animation:spin 10s infinite linear forwards;
+        }
+        @keyframes spin {
+            0%{
+                transform:rotate3d(1,1,1,0turn) rotate3d(1,1,1,0turn);
+            }
+            100%{
+                transform:rotate3d(9,2,3,1turn) rotate3d(5,9,6,2turn);
+            }
+        }
+        .photo-room>div{
+            position: absolute;
+            top: 0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            width: 200px;
+            height: 200px;
+        }
+        .photo-room >.room1 div{
+            opacity: 0.9;
+        }
+        .photo-room>.room1> .face {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            opacity: 0;
+            box-shadow: 0px 0px 10px 0px inset white;
+            transition-duration: 5s;
+        }
+        .photo-room:hover>.room1>.face{
+            opacity: 1;
+            width: 200px;
+            height: 200px;
+            box-shadow:  0px 0px 15px 4px inset lightblue;
+        }
+        .room1 > .face-top{
+            background:url("p1.jpg") center/cover no-repeat;
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        .room1 > .face-bottom{
+            background:url("p2.jpg") center/cover no-repeat;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+        .room1 > .face-left{
+            background:url("p4.jpg") center/cover no-repeat;
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        .room1 > .face-right{
+            background:url("p5.jpg") center/cover no-repeat;
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        .room1 > .face-front{
+            background:url("p3.jpg") center/cover no-repeat;
+            transform: translateZ(150px);
+        }
+        .room1 > .face-back{
+            background:url("p6.jpg") center/cover no-repeat;
+            transform: translateZ(-150px);
+        }
+        .photo-room>.room2{
+            width: 100px;
+            height: 100px;
+            
+        }
+        .photo-room>.room2>.face{
+            position:absolute;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0px 0px 10px 5px inset lightblue;
+        }
+        .room2 > .face-top{
+            background:url("s2.jpg") center/cover no-repeat;
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .room2 > .face-bottom{
+            background:url("s2.jpg") center/cover no-repeat;
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+        .room2 > .face-left{
+            background:url("s1.jpg") center/cover no-repeat;
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .room2 > .face-right{
+            background:url("s1.jpg") center/cover no-repeat;
+            transform: rotateY(90deg) translateZ(50px);
+        }
+        .room2 > .face-front{
+            background:url("s1.jpg") center/cover no-repeat;
+            transform: translateZ(50px);
+        }
+        .room2 > .face-back{
+            background:url("s1.jpg") center/cover no-repeat;
+            transform: translateZ(-50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="photo-room">
+        <div class="room1">
+            <div class="face-top face"></div>
+            <div class="face-left face"></div>
+            <div class="face-right face"></div>
+            <div class="face-bottom face"></div>
+            <div class="face-back face"></div>
+            <div class="face-front face "></div>
+        </div>
+        <div class="room2">
+            <div class="face-top face"></div>
+            <div class="face-left face"></div>
+            <div class="face-right face"></div>
+            <div class="face-bottom face"></div>
+            <div class="face-back face"></div>
+            <div class="face-front face"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

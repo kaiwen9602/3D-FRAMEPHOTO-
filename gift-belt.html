@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            min-width: 400px;
+            min-height: 400px;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .belt{
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            margin: auto;
+            width: 600px;
+            height: 50px;
+            background-color: #fff;
+        }
+        .belt::before{
+            content:"";
+            width: 0;
+            height: 0;
+            position:absolute;
+            left:0;
+            border: 25px solid transparent;
+            border-left: 25px solid black;
+        }
+        .belt::after{
+            content:"";
+            width: 0;
+            height: 0;
+            position:absolute;
+            right:0;
+            border: 25px solid transparent;
+            border-right: 25px solid black;
+        }
+        .belt{
+            text-align: center;
+        }
+        .belt>ul>li{
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            position:relative;
+            display: inline-block;
+            text-align: center;
+            
+        }
+        .belt>ul>li>div{
+            position: absolute;
+            left:0;
+            right:0;
+            margin:auto;
+            width: 80px;
+            height: 50px;
+            background-color: #fff;
+            z-index: 10;
+            transition-duration: 0.5s;
+        }
+        .belt>ul>li>div:nth-child(1){
+            z-index: 11;
+        }
+        .belt>ul>li>.back-shadow{
+            width: 60px;
+            height: 50px;
+            background-color: #000;
+        }
+        .belt>ul>li:hover div:nth-child(1){
+            border-radius: 5px;
+            transform: translateY(-10px);
+        }
+        .belt>ul>li>.back-shadow::before{
+            content:"";
+            position:absolute;
+            bottom:0;
+            left:-10px;
+            border-top: 10px solid #ccc;
+            border-left: 10px solid transparent ;
+        }
+        .belt>ul>li>.back-shadow::after{
+            content:"";
+            position:absolute;
+            bottom:0;
+            right:-10px;
+            border-top: 10px solid #ccc;
+            border-right: 10px solid transparent ;
+        }
+    </style>
+</head>
+<body>
+    <div class="belt">
+        <ul>
+            <li>
+                <div>I</div>
+                <div class="back-shadow"></div>
+            </li>
+            <li>
+                <div>Really</div>
+                <div class="back-shadow"></div>
+            </li>
+            <li>
+                <div>MIss</div>
+                <div class="back-shadow"></div>
+            </li>
+            <li>
+                <div>U</div>
+                <div class="back-shadow"></div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
